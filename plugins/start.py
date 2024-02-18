@@ -3,7 +3,7 @@ import datetime
 import os, re
 import asyncio
 import random
-from Script import script
+from script import *
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 import time
 from pyrogram import Client, filters, enums

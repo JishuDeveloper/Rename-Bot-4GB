@@ -23,7 +23,7 @@ async def donatecm(bot,message):
         			InlineKeyboardButton("✖️ Close",callback_data = "cancel") ]])
 	await message.reply_text(text = text,reply_markup = keybord)
 
-@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["admin"]))
+@Client.on_message(filters.private & filters.user(OWNER) & filters.command(["admin"]))
 async def admincm(bot,message):
 	text = script.ADMIN_TXT
 	keybord = InlineKeyboardMarkup([

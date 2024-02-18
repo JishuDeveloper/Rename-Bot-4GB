@@ -26,14 +26,16 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
             humanbytes(speed),
             estimated_total_time if estimated_total_time != '' else "0 s"
         )
+
+        
+        cancel_button = InlineKeyboardButton("✖️ Cancel ✖️", callback_data="cancel")
+
         try:
             await message.edit(
-                text="{}\n {}".format(
-                    ud_type,
-                    tmp
-                )
+                text=f"{ud_type}\n\n{tmp}",
+                reply_markup=InlineKeyboardMarkup([[cancel_button]])
             )
-        except:
+        except Exception:
             pass
 
 

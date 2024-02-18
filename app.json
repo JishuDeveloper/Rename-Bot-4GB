@@ -1,0 +1,147 @@
+
+{
+
+    "name": "Rename Bot 4GB",
+
+    "description": "4GB Rename Bot",
+
+    "keywords": ["Premium Renamer Bot ", "4GB File", "telegram", "JishuDeveloper" ],
+
+    "repository": "https://github.com/JishuDeveloper/Rename-Bot-4GB",
+
+    "success_url": "https://t.me/Madflix_Bots",
+
+    "env": {
+
+        "FORCE_SUBS": {
+
+            "description" : "Channel or Group user Name With @",
+
+            "value" : "Madflix_Bots",
+
+            "required" : false
+
+            
+
+         },
+
+        "STRING": {
+
+            "description" : "Pyrogram String Session",
+
+            "value" : "",
+
+            "required" : false
+
+        },
+
+        "API_ID": {
+
+            "description" : "Your APP ID From my.telegram.org ",
+
+            "value" : "",
+
+            "required" : true
+
+        },
+
+        "API_HASH": {
+
+            "description" : "Your API Hash From my.telegram.org ",
+
+            "value" : "",
+
+            "required" : true
+
+        },
+
+        "BOT_TOKEN": {
+
+            "description" : "Your Bot Token From @BotFather",
+
+            "value" : "",
+
+            "required" : true
+
+        },
+
+        "OWNER": {
+
+            "description" : "Add Your User ID",
+
+            "value" : "",
+
+            "required" : true
+
+        },
+
+        "DB_URL":{
+
+             "description" : "Database Url Get It From Mongo DB",
+
+             "value" : "",
+
+             "required" : true
+
+
+        },
+
+        "DB_NAME":{
+
+               "description" : "Database Name ",
+
+               "value" : "madflixbotz",
+
+               "required" : false
+
+        },
+
+        "LOG_CHANNEL":{
+
+             "description" : "Channel Id Nedd Store Files Get Your channel id from Rose @MissRose_bot",
+
+             "value" : "",
+
+             "required" : true
+
+        },
+        "BOT_PIC":{
+
+            "description" : "Start up pic of your bot. Get from telegraph_Bot",
+
+            "value" : "https://graph.org/file/ad48ac09b1e6f30d2dae4.jpg",
+
+            "required" : false
+
+       },
+        "BOT_USERNAME":{
+
+            "description" : "Add bot username without @",
+
+            "value" : "",
+
+            "required" : true
+
+        }
+
+        
+
+    },
+
+    "buildpacks": [
+
+      {
+
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+
+      },
+
+      {
+
+        "url": "heroku/python"
+
+      }
+
+    ]
+
+}

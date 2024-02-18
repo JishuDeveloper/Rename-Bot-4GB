@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  workerdisk:
+    build: .
+    environment:
+      - API_ID=${API_ID}
+      - API_HASH=${API_HASH}
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DB_NAME=${DB_NAME}
+      - DB_URL=${DB_URL}
+      - CHANNEL=${CHANNEL}
+      - ADMIN=${ADMIN}
+      - BOT_PIC=${BOT_PIC}

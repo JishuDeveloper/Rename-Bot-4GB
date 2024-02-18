@@ -7,7 +7,7 @@ from helper.progress import humanbytes
 token = BOT_TOKEN
 botid = token.split(':')[0]
 
-@Client.on_message(filters.private & filters.user(ADMIN)  & filters.command(["users"]))
+@Client.on_message(filters.private & filters.user(OWNER)  & filters.command(["users"]))
 async def users(client,message):
 	botdata(int(botid))
 	data = find_one(int(botid))
@@ -20,7 +20,7 @@ async def users(client,message):
                              reply_markup= InlineKeyboardMarkup([[InlineKeyboardButton("🦋 Close 🦋", callback_data="cancel")]]) 
                              )
 	
-@Client.on_message(filters.private & filters.user(ADMIN)  & filters.command(["allids"]))
+@Client.on_message(filters.private & filters.user(OWNER)  & filters.command(["allids"]))
 async def allids(client,message):
 	botdata(int(botid))
 	data = find_one(int(botid))

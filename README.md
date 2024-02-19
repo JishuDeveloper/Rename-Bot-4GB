@@ -96,7 +96,7 @@
 
 `/donate` - To support developer.
  
-`/upgrade` - To view all plans with price list of SILVER - GOLD - DIAMOND.
+`/upgrade` - To view all plans with price list of BASIC - STANDARD - PRO.
 
 
 
@@ -115,7 +115,7 @@
  
 `/resetpower` - To Reset renaming capacity (to default 2GB)  [FOR ADMINS USE ONLY].
  
-`/addpremium` - To Upgrade user plan to SILVER - GOLD - DIAMOND  [FOR ADMINS USE ONLY].
+`/addpremium` - To Upgrade user plan to BASIC - STANDARD - PRO  [FOR ADMINS USE ONLY].
 
 `/restart` - Use This Command To Cancel All Process And Restart The Bot [FOR ADMINS USE ONLY].
 

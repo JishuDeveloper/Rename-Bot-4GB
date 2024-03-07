@@ -11,7 +11,7 @@
 
 ### 🔥 ALL VARIABLES
 
-* `BOT_TOKEN` - Get bot token from https://t.me/BotFather
+* `BOT_TOKEN` - Get bot token from <a href="https://t.me/BotFather" target="/blank">Bot Father</a>
 
 * `API_ID` - From https://my.telegram.org 
 

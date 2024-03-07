@@ -13,9 +13,9 @@
 
 * `BOT_TOKEN` - Get bot token from <a href="https://t.me/BotFather" target="/blank">Bot Father</a>
 
-* `API_ID` - From <a href="https://my.telegram.org" target="/blank">Telegram Authentication</a> 
+* `API_ID` - Get API ID from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> 
 
-* `API_HASH` - From <a href="https://my.telegram.org" target="/blank">Telegram Authentication</a>
+* `API_HASH` - Get API HASH from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a>
 
 * `OWNER` - Bot admin/owner user id.
 

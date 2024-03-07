@@ -121,12 +121,20 @@
 
 
 
+### ❤️ RESPECTING ❤️
+- [JishuDeveloper](https://github.com/JishuDeveloper)
+- [Madflix Official](https://github.com/jishusinha) 
+- [lntechnical](https://github.com/lntechnical2)
 
-#### 🧡 Respecting... 🧡
-- [🔥 JishuDeveloper](https://github.com/JishuDeveloper) 
-- [🔥 lntechnical](https://github.com/lntechnical2)
+### 😍 BOTS CHANNEL 😍
+- [Madflix Botz](https://t.me/Madflix_Bots)
+- [Jishu Botz](https://t.me/JishuBotz)
 
-### 🤩 Bots Channel
-<a href="https://t.me/madflix_bots">
-   <p>❣️ Madflix Botz 🔥</p>
-</a>
+### 💕 CONTACT DEVELOPER 💕
+- [Jishu Developer](https://t.me/JishuDeveloper)
+- [Madflix Official](https://t.me/MadflixOfficials)
+
+### ☕ BUY ME A COFFEE ☕
+- [PayPal](https://paypal.me/jishudeveloper/2.50USD)
+- [PhonePe](https://graph.org/file/6822df5af3a2e80637172.jpg)
+- [UPI](https://graph.org/file/b831109be4acff5c966d2.jpg)

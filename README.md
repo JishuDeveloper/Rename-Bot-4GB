@@ -13,13 +13,13 @@
 
 * `BOT_TOKEN` - Get bot token from <a href="https://t.me/BotFather" target="/blank">Bot Father</a>
 
-* `API_ID` - From https://my.telegram.org 
+* `API_ID` - From <a href="https://my.telegram.org" target="/blank">Telegram Authentication</a> 
 
-* `API_HASH` - From https://my.telegram.org 
+* `API_HASH` - From <a href="https://my.telegram.org" target="/blank">Telegram Authentication</a>
 
 * `OWNER` - Bot admin/owner user id.
 
-* `DB_URL` - Mongo Database URL from https://cloud.mongodb.com
+* `DB_URL` - Mongo Database URL from <a href="https://cloud.mongodb.com" target="/blank">Mongo DB</a>
 
 * `DB_NAME`  - Your database name from mongoDB.
 

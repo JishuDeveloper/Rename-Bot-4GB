@@ -11,25 +11,25 @@
 
 ### 🔥 ALL VARIABLES
 
-* `BOT_TOKEN`  - Get bot token from @BotFather
+* `BOT_TOKEN` - Get bot token from https://t.me/BotFather
 
-* `API_ID` - From my.telegram.org 
+* `API_ID` - From https://my.telegram.org 
 
-* `API_HASH` - From my.telegram.org 
+* `API_HASH` - From https://my.telegram.org 
 
-* `OWNER` - Admin user id.
+* `OWNER` - Bot admin/owner user id.
 
-* `DB_URL`  - Mongo Database URL from https://cloud.mongodb.com
+* `DB_URL` - Mongo Database URL from https://cloud.mongodb.com
 
 * `DB_NAME`  - Your database name from mongoDB.
 
-* `FORCE_SUBS` - Your force sub channel username `without @`
+* `FORCE_SUBS` - Your force sub channel username `without @` (Optional)
 
-* `BOT_PIC` - start message photo.
+* `BOT_PIC` - Start message photo. (Optional)
 
 * `STRING` - If you want to rename 4GB+ files.
 
-* `BOT_USERNAME` - Add bot username `without @`
+* `BOT_USERNAME` - Add bot username `without @` (Optional)
 
 * `LOG_CHANNEL` - A channel to log the activities of bot. Make sure bot is an admin in the channel.
 
@@ -38,23 +38,22 @@
 
 ### 📶 DEPLOYEMENT SUPPORT
 
-<details><summary>Deploy To Koyeb</summary>
+<summary>Deploy To Koyeb</summary>
 <p>
 <br>                 
 <a target="/blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/JishuDeveloper/Rename-Bot-4GB&branch=main&name=rename-botz" >
   <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy">
 </a>
 </p>
-</details>
 
-<details><summary>Deploy To Heroku</summary>
+
+<summary>Deploy To Heroku</summary>
 <p>
 <br>
 <a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
-</details>
 
 
 
@@ -62,9 +61,8 @@
 
 ### 🥰 FEATURES
  - Renames very fast .
- - Support 4Gb Rename With Upgrade PLan .
+ - Support 4Gb Rename With Upgrade Plan .
  - Permanent Thumbnail support.
- - Force join for the user for use.
  - Supports Broadcasts.
  - Set custom caption.
  - Has a custom Start-up pic.
@@ -84,11 +82,11 @@
  
 `/delthumb` - To delete current thumbnail.
  
-`/set_caption` - set a custom caption.
+`/set_caption` - To set a custom caption.
  
-`/see_caption` - see your custom caption.
+`/see_caption` - To see your custom caption.
  
-`/del_caption` - delete custom caption.
+`/del_caption` - To delete custom caption.
 
 `/ping` - To Check Bot ping.
  
@@ -96,28 +94,28 @@
 
 `/donate` - To support developer.
  
-`/upgrade` - To view all plans with price list of BASIC - STANDARD - PRO.
+`/upgrade` - To view all plans with price list.
 
 
 
 
 ### ADMIN COMMAND
 
-`/users` - Use This Command To See Total Users [FOR ADMINS USE ONLY].
+`/users` - Use This Command To See Total Users [Admins Only].
 
-`/allids` - Use This Command To See All Users IDs [FOR ADMINS USE ONLY].
+`/allids` - Use This Command To See All Users IDs list [Admins Only].
  
-`/broadcast` - Message Broadcast command [FOR ADMINS USE ONLY].
+`/broadcast` - Message Broadcast command [Admins Only].
 
-`/warn` - Use This Command To Send A Message To A User [FOR ADMINS USE ONLY].
+`/warn` - Use This Command To Send A Message To A User [Admins Only].
  
-`/ceasepower` - To Cease(downgrade) renaming capacity [FOR ADMINS USE ONLY].
+`/ceasepower` - To Cease (downgrade) renaming capacity [Admins Only].
  
-`/resetpower` - To Reset renaming capacity (to default 2GB)  [FOR ADMINS USE ONLY].
+`/resetpower` - To Reset renaming capacity (to default 2GB)  [Admins Only].
  
-`/addpremium` - To Upgrade user plan to BASIC - STANDARD - PRO  [FOR ADMINS USE ONLY].
+`/addpremium` - To Upgrade user plan [Admins Only].
 
-`/restart` - Use This Command To Cancel All Process And Restart The Bot [FOR ADMINS USE ONLY].
+`/restart` - Use This Command To Cancel All Process And Restart The Bot [Admins Only].
 
 
 

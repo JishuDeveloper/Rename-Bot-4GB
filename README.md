@@ -4,7 +4,7 @@
  <b><a href="https://t.me/filerenamexprobot" target="/blank">Rename Bot 4GB</a></>
 </h1>
 
-<p align="center">🤍 Thanks for Being Here 🤍</p>
+<p align="center">🩷 Thanks for Being Here 🩷</p>
 
 
 

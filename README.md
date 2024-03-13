@@ -12,25 +12,15 @@
 ### 🔥 ALL VARIABLES
 
 * `BOT_TOKEN` - Get bot token from <a href="https://t.me/BotFather" target="/blank">Bot Father</a>
-
 * `API_ID` - Get API ID from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> 
-
 * `API_HASH` - Get API HASH from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a>
-
 * `OWNER` - Bot admin/owner user id.
-
 * `DB_URL` - Mongo Database URL from <a href="https://cloud.mongodb.com" target="/blank">Mongo DB</a>
-
 * `DB_NAME`  - Your database name from mongoDB.
-
 * `FORCE_SUBS` - Your force sub channel username `without @` (Optional)
-
 * `BOT_PIC` - Start message photo. (Optional)
-
 * `STRING` - If you want to rename 4GB+ files.
-
 * `BOT_USERNAME` - Add bot username `without @` (Optional)
-
 * `LOG_CHANNEL` - A channel to log the activities of bot. Make sure bot is an admin in the channel.
 
 

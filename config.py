@@ -36,6 +36,5 @@ TOKEN_TIMEOUT = os.environ.get("TOKEN_TIMEOUT", "")
 # Jishu Developer 
 # Don't Remove Credit 🥺
 # Telegram Channel @Madflix_Bots
-# Telegram Channel @JishuBotz
+# Backup Channel @JishuBotz
 # Developer @JishuDeveloper
-# Developer @MadflixOfficials

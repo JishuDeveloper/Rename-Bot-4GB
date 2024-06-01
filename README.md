@@ -31,7 +31,7 @@
 <summary>Deploy To Koyeb</summary>
 <p>
 <br>                 
-<a target="/blank" href="https://github.com/tusarpatel/Rename-Bot-4GB/tree/patch-2&branch=patch-2&name=rename-botz" >
+<a target="/blank" href="https://github.com/tusarpatel/Rename-Bot-4GB/tree/patch-2&branch=main&name=rename-botz" >
   <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy">
 </a>
 </p>

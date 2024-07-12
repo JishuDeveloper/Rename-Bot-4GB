@@ -1,6 +1,9 @@
 from pyrogram import Client, idle
 from plugins.cb_data import app as Client2
 from config import *
+import pyrogram.utils
+
+pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 
 
 

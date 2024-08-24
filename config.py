@@ -16,6 +16,8 @@ DB_NAME = os.environ.get("DB_NAME", "madflixbotz")
 STRING = os.environ.get("STRING", "")
 BOT_PIC = os.environ.get("BOT_PIC", "https://graph.org/file/ad48ac09b1e6f30d2dae4.jpg")
 
+FILE_AUTO_DELETE = int(os.environ.get("FILE_AUTO_DELETE", "600"))
+
 
 
 

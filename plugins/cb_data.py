@@ -7,7 +7,7 @@ from helper.database import *
 import os
 import random
 from PIL import Image
-import time, asyncio
+import time, asyncio, humanize
 from datetime import timedelta
 from helper.ffmpeg import take_screen_shot, fix_thumb
 from helper.progress import humanbytes

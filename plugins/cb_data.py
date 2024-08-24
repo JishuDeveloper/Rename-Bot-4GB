@@ -100,8 +100,16 @@ async def doc(bot, update):
             from_chat = filw.chat.id
             mg_id = filw.id
             time.sleep(2)
-            await bot.copy_message(update.from_user.id, from_chat, mg_id)
+            naruto = await bot.copy_message(update.from_user.id, from_chat, mg_id)
             await ms.delete()
+            
+            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
+            await file.delete()
+            
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("File Delete Message")
+            
             os.remove(file_path)
             try:
                 os.remove(ph_path)
@@ -120,8 +128,16 @@ async def doc(bot, update):
         await ms.edit("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ`")
         c_time = time.time()
         try:
-            await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
+            naruto = await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
             await ms.delete()
+            
+            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
+            await file.delete()
+            
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("File Delete Message")
+            
             os.remove(file_path)
         except Exception as e:
             neg_used = used - int(file.file_size)
@@ -202,8 +218,16 @@ async def vid(bot, update):
             from_chat = filw.chat.id
             mg_id = filw.id
             time.sleep(2)
-            await bot.copy_message(update.from_user.id, from_chat, mg_id)
+            naruto = await bot.copy_message(update.from_user.id, from_chat, mg_id)
             await ms.delete()
+            
+            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
+            await file.delete()
+            
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("File Delete Message")
+            
             os.remove(file_path)
             try:
                 os.remove(ph_path)
@@ -222,8 +246,16 @@ async def vid(bot, update):
         await ms.edit("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ`")
         c_time = time.time()
         try:
-            await bot.send_video(update.from_user.id, video=file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
+            naruto = await bot.send_video(update.from_user.id, video=file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
             await ms.delete()
+            
+            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
+            await file.delete()
+            
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("File Delete Message")
+            
             os.remove(file_path)
         except Exception as e:
             neg_used = used - int(file.file_size)
@@ -283,8 +315,16 @@ async def aud(bot, update):
         await ms.edit("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ`")
         c_time = time.time()
         try:
-            await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, thumb=ph_path, duration=duration, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
+            naruto = await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, thumb=ph_path, duration=duration, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
             await ms.delete()
+            
+            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
+            await file.delete()
+            
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("File Delete Message")
+            
             os.remove(file_path)
             os.remove(ph_path)
         except Exception as e:
@@ -297,8 +337,16 @@ async def aud(bot, update):
         await ms.edit("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ`")
         c_time = time.time()
         try:
-            await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, duration=duration, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
+            naruto = await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, duration=duration, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
             await ms.delete()
+            
+            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
+            await file.delete()
+            
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("File Delete Message")
+            
             os.remove(file_path)
         except Exception as e:
             await ms.edit(e)

@@ -7,7 +7,7 @@ from helper.database import *
 import os
 import random
 from PIL import Image
-import time
+import time, asyncio
 from datetime import timedelta
 from helper.ffmpeg import take_screen_shot, fix_thumb
 from helper.progress import humanbytes
@@ -15,6 +15,10 @@ from helper.set import escape_invalid_curly_brackets
 from config import *
 
 log_channel = LOG_CHANNEL
+d_time = FILE_AUTO_DELETE
+delete_time_seconds = d_time
+delete_time = humanize.naturaldelta(delete_time_seconds)
+
 app = Client("test", api_id=API_ID, api_hash=API_HASH, session_string=STRING)
 
 
@@ -50,6 +54,7 @@ async def doc(bot, update):
     file_path = f"downloads/{new_filename}"
     message = update.message.reply_to_message
     file = message.document or message.video or message.audio
+    hinata = message
     ms = await update.message.edit("`Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ`")
     used_limit(update.from_user.id, file.file_size)
     c_time = time.time()
@@ -101,20 +106,21 @@ async def doc(bot, update):
             mg_id = filw.id
             time.sleep(2)
             naruto = await bot.copy_message(update.from_user.id, from_chat, mg_id)
-            await ms.delete()
             
-            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
-            await file.delete()
-            
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("File Delete Message")
+            obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis File Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This File To Somewhere Else And Start Downloading There.", quote=True)
+            await hinata.delete()
             
             os.remove(file_path)
             try:
                 os.remove(ph_path)
             except:
                 pass
+                
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your File Is Successfully Deleted ✅")
+            
         except Exception as e:
             neg_used = used - int(file.file_size)
             used_limit(update.from_user.id, neg_used)
@@ -129,16 +135,16 @@ async def doc(bot, update):
         c_time = time.time()
         try:
             naruto = await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
-            await ms.delete()
             
-            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
-            await file.delete()
-            
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("File Delete Message")
+            obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis File Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This File To Somewhere Else And Start Downloading There.", quote=True)
+            await hinata.delete() 
             
             os.remove(file_path)
+            
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your File Is Successfully Deleted ✅")
         except Exception as e:
             neg_used = used - int(file.file_size)
             used_limit(update.from_user.id, neg_used)
@@ -158,6 +164,7 @@ async def vid(bot, update):
     file_path = f"downloads/{new_filename}"
     message = update.message.reply_to_message
     file = message.document or message.video or message.audio
+    hinata = message
     ms = await update.message.edit("`Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ`")
     used_limit(update.from_user.id, file.file_size)
     c_time = time.time()
@@ -219,20 +226,21 @@ async def vid(bot, update):
             mg_id = filw.id
             time.sleep(2)
             naruto = await bot.copy_message(update.from_user.id, from_chat, mg_id)
-            await ms.delete()
             
-            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
-            await file.delete()
-            
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("File Delete Message")
+            obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Video To Somewhere Else And Start Downloading There.", quote=True)
+            await hinata.delete()
             
             os.remove(file_path)
             try:
                 os.remove(ph_path)
             except:
                 pass
+                
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your Video Is Successfully Deleted ✅")
+                
         except Exception as e:
             neg_used = used - int(file.file_size)
             used_limit(update.from_user.id, neg_used)
@@ -247,16 +255,17 @@ async def vid(bot, update):
         c_time = time.time()
         try:
             naruto = await bot.send_video(update.from_user.id, video=file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
-            await ms.delete()
             
-            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
-            await file.delete()
-            
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("File Delete Message")
+            obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Video To Somewhere Else And Start Downloading There.", quote=True)
+            await hinata.delete()
             
             os.remove(file_path)
+            
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your Video Is Successfully Deleted ✅")
+            
         except Exception as e:
             neg_used = used - int(file.file_size)
             used_limit(update.from_user.id, neg_used)
@@ -275,6 +284,7 @@ async def aud(bot, update):
     file_path = f"downloads/{new_filename}"
     message = update.message.reply_to_message
     file = message.document or message.video or message.audio
+    hinata = message
     total_used = used + int(file.file_size)
     used_limit(update.from_user.id, total_used)
     ms = await update.message.edit("`Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ`")
@@ -316,17 +326,18 @@ async def aud(bot, update):
         c_time = time.time()
         try:
             naruto = await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, thumb=ph_path, duration=duration, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
-            await ms.delete()
             
-            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
-            await file.delete()
-            
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("File Delete Message")
+            obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Audio Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Audio To Somewhere Else And Start Downloading There.", quote=True)
+            await hinata.delete()
             
             os.remove(file_path)
             os.remove(ph_path)
+            
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your Audio Is Successfully Deleted ✅")
+            
         except Exception as e:
             neg_used = used - int(file.file_size)
             used_limit(update.from_user.id, neg_used)
@@ -338,16 +349,17 @@ async def aud(bot, update):
         c_time = time.time()
         try:
             naruto = await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, duration=duration, progress=progress_for_pyrogram, progress_args=("`Tʀyɪɴɢ Tᴏ Uᴘʟᴏᴀᴅɪɴɢ....`",  ms, c_time))
-            await ms.delete()
             
-            obito = await naruto.reply_text(f"Delete Alert Message.", quote=True)
-            await file.delete()
-            
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("File Delete Message")
+            obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Audio Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Audio To Somewhere Else And Start Downloading There.", quote=True)
+            await hinata.delete()
             
             os.remove(file_path)
+            
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your Audio Is Successfully Deleted ✅")
+            
         except Exception as e:
             await ms.edit(e)
             neg_used = used - int(file.file_size)

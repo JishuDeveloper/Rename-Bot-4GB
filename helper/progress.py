@@ -21,7 +21,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start):
         filled_blocks = math.floor(percentage / 5)
         empty_blocks = 20 - filled_blocks
 
-        progress_bar = "▣" * filled_blocks + "▢" * empty_blocks
+        progress_bar = "■" * filled_blocks + "□" * empty_blocks
 
         tmp = PROGRESS_BAR.format(
             round(percentage, 2),

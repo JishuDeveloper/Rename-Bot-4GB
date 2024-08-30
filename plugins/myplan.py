@@ -1,15 +1,16 @@
-import time
+import time, datetime
 from pyrogram import Client, filters
 from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup)
 from helper.database import find_one, used_limit
 from helper.database import daily as daily_
-import datetime
 from datetime import datetime
 from datetime import date as date_
 from helper.progress import humanbytes
 from helper.database import daily as daily_
 from helper.date import check_expi
 from helper.database import uploadlimit, usertype
+
+
 
 
 @Client.on_message(filters.private & filters.command(["myplan"]))
@@ -36,10 +37,10 @@ async def start(client, message):
             uploadlimit(message.from_user.id, 2147483652)
             usertype(message.from_user.id, "Free")
     if ends == None:
-        text = f"**User ID :** `{message.from_user.id}` \n**Name :** {message.from_user.mention} \n\n**🏷 Plan :** {user} \n\n✓ Upload 2GB Files \n✓ Daily Upload : {humanbytes(limit)} \n✓ Today Used : {humanbytes(used)} \n✓ Remain : {humanbytes(remain)} \n✓ Timeout : 2 Minutes \n✓ Parallel process : Unlimited \n✓ Time Gap : Yes \n\n**Validity :** Lifetime"
+        text = f"<b>User ID :</b> <code>{message.from_user.id}</code> \n<b>Name :</b> {message.from_user.mention} \n\n<b>🏷 Plan :</b> {user} \n\n✓ Upload 2GB Files \n✓ Daily Upload : {humanbytes(limit)} \n✓ Today Used : {humanbytes(used)} \n✓ Remain : {humanbytes(remain)} \n✓ Timeout : 2 Minutes \n✓ Parallel process : Unlimited \n✓ Time Gap : Yes \n\n<b>Validity :</b> Lifetime"
     else:
         normal_date = datetime.fromtimestamp(ends).strftime('%Y-%m-%d')
-        text = f"**User ID :** `{message.from_user.id}` \n**Name :** {message.from_user.mention} \n\n**🏷 Plan :** {user} \n\n✓ High Priority \n✓ Upload 4GB Files \n✓ Daily Upload : {humanbytes(limit)} \n✓ Today Used : {humanbytes(used)} \n✓ Remain : {humanbytes(remain)} \n✓ Timeout : 0 Second \n✓ Parallel process : Unlimited \n✓ Time Gap : Yes \n\n**Your Plan Ends On :** {normal_date}"
+        text = f"<b>User ID :</b> <code>{message.from_user.id}</code> \n<b>Name :</b> {message.from_user.mention} \n\n<b>🏷 Plan :</b> {user} \n\n✓ High Priority \n✓ Upload 4GB Files \n✓ Daily Upload : {humanbytes(limit)} \n✓ Today Used : {humanbytes(used)} \n✓ Remain : {humanbytes(remain)} \n✓ Timeout : 0 Second \n✓ Parallel process : Unlimited \n✓ Time Gap : Yes \n\n<b>Your Plan Ends On :</b> {normal_date}"
 
     if user == "Free":
         await message.reply(text, quote=True, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💳 Upgrade", callback_data="upgrade"), InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]]))
@@ -53,4 +54,5 @@ async def start(client, message):
 # Jishu Developer 
 # Don't Remove Credit 🥺
 # Telegram Channel @Madflix_Bots
-# Developer @JishuDeveloper
+# Back-Up Channel @JishuBotz
+# Developer @JishuDeveloper & @MadflixOfficials

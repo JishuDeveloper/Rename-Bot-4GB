@@ -5,15 +5,18 @@ from helper.database import getid, delete
 import time
 from config import *
 
-@Client.on_message(filters.private & filters.user(OWNER) & filters.command(["broadcast"]))
+
+
+
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["broadcast"]))
 async def broadcast(bot, message):
     if (message.reply_to_message):
-        ms = await message.reply_text("Getting All IDs From Database..\nPlease Wait")
+        ms = await message.reply_text("Getting All IDs From Database. Please Wait...")
         ids = getid()
         tot = len(ids)
         success = 0
         failed = 0
-        await ms.edit(f"Starting Broadcast... \nSending Message To {tot} Users")
+        await ms.edit(f"Starting Broadcast... \n\nSending Message To {tot} Users")
         for id in ids:
             try:
                 time.sleep(1)
@@ -30,7 +33,11 @@ async def broadcast(bot, message):
 
 
 
+
+
+
 # Jishu Developer 
 # Don't Remove Credit 🥺
 # Telegram Channel @Madflix_Bots
-# Developer @JishuDeveloper
+# Back-Up Channel @JishuBotz
+# Developer @JishuDeveloper & @MadflixOfficials

@@ -19,7 +19,7 @@ d_time = FILE_AUTO_DELETE
 delete_time_seconds = d_time
 delete_time = humanize.naturaldelta(delete_time_seconds)
 
-app = Client("test", api_id=API_ID, api_hash=API_HASH, session_string=STRING)
+app = Client("JishuBotz", api_id=STRING_API_ID, api_hash=STRING_API_HASH, session_string=STRING_SESSION)
 
 
 @Client.on_callback_query(filters.regex('cancel'))

@@ -8,18 +8,10 @@ pyrogram.utils.MIN_CHANNEL_ID = -100999999999999
 
 
 
-bot = Client(
+bot = Client("Renamer", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH, plugins=dict(root='plugins'))
 
-           "Renamer",
 
-           bot_token=BOT_TOKEN,
 
-           api_id=API_ID,
-
-           api_hash=API_HASH,
-
-           plugins=dict(root='plugins'))
-           
 
 if STRING_SESSION:
     apps = [Client2,bot]

@@ -34,7 +34,7 @@ After Payment Send Screenshots Of Payment To Admin @MadflixOfficials"""
         InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]
         ])
     
-    await update.message.edit(text = text,reply_markup = keybord)
+    await update.message.edit(text = text,reply_markup = keybord, disable_web_page_preview=True)
     
     
 
@@ -68,7 +68,7 @@ After Payment Send Screenshots Of Payment To Admin @MadflixOfficials"""
         InlineKeyboardButton("✖️ Cancel", callback_data="cancel")]
         ])
     
-    await message.reply_text(text=text, reply_markup=keybord, quote=True)
+    await message.reply_text(text=text, reply_markup=keybord, quote=True, disable_web_page_preview=True)
     
 	
     

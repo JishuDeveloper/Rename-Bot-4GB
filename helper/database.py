@@ -2,20 +2,20 @@ import pymongo
 import os
 from helper.date import add_date
 from config import *
-mongo = pymongo.MongoClient(DB_URL)
-db = mongo[DB_NAME]
+mongo = pymongo.MongoClient(DATABASE_URL)
+db = mongo[DATABASE_NAME]
 dbcol = db["user"]
 
+
+
 # Total User
-
-
 def total_user():
     user = dbcol.count_documents({})
     return user
 
-# insert bot Data
 
 
+# Insert Bot Data
 def botdata(chat_id):
     bot_id = int(chat_id)
     try:

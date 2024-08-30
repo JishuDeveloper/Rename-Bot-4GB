@@ -32,7 +32,7 @@
         
         "STRING_API_ID": {
             "description": "Premium 4GB Client API ID From my.telegram.org ",
-            "value": "",
+            "value": "0",
             "required": false
         },
         

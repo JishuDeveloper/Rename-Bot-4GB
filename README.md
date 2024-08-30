@@ -32,15 +32,17 @@
 
 
 
-### 📶 DEPLOYEMENT SUPPORT
+### 📶 DEPLOYEMENT
 
-<summary>Deploy To Heroku</summary>
+<b><details><summary>Tap On Me For Deply To Heroku</summary>
+
+ - Deploy To Heroku
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB/tree/auto-delete">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
+<a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB/tree/auto-delete"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"> </a>
 </p>
+</b>
+</details>
 
 
 
@@ -120,4 +122,3 @@ restart - Use This Command To Cancel All Process And Restart The Bot [Admins Onl
 - [PayPal](https://paypal.me/jishudeveloper/2.50USD)
 - [PhonePe](https://graph.org/file/6822df5af3a2e80637172.jpg)
 - [UPI](https://graph.org/file/b831109be4acff5c966d2.jpg)
-- 

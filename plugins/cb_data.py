@@ -115,15 +115,16 @@ async def doc(bot, update):
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis File Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This File To Somewhere Else And Start Downloading There.", quote=True)
             await hinata.delete()
             await ms.delete()
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("Your File Is Successfully Deleted ✅")
             
             os.remove(file_path)
             try:
                 os.remove(ph_path)
             except:
                 pass
+                
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your File Is Successfully Deleted ✅")
             
         except Exception as e:
             neg_used = used - int(file.file_size)
@@ -141,11 +142,11 @@ async def doc(bot, update):
             naruto = await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis File Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This File To Somewhere Else And Start Downloading There.", quote=True)
-            await hinata.delete() 
+            await hinata.delete()
+            await ms.delete()
             
             os.remove(file_path)
             
-            await ms.delete()
             await asyncio.sleep(FILE_AUTO_DELETE)
             await naruto.delete()
             await obito.edit("Your File Is Successfully Deleted ✅")
@@ -233,6 +234,7 @@ async def vid(bot, update):
             
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Video To Somewhere Else And Start Downloading There.", quote=True)
             await hinata.delete()
+            await ms.delete()
             
             os.remove(file_path)
             try:
@@ -240,7 +242,6 @@ async def vid(bot, update):
             except:
                 pass
                 
-            await ms.delete()
             await asyncio.sleep(FILE_AUTO_DELETE)
             await naruto.delete()
             await obito.edit("Your Video Is Successfully Deleted ✅")
@@ -262,10 +263,10 @@ async def vid(bot, update):
             
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Video To Somewhere Else And Start Downloading There.", quote=True)
             await hinata.delete()
+            await ms.delete()
             
             os.remove(file_path)
             
-            await ms.delete()
             await asyncio.sleep(FILE_AUTO_DELETE)
             await naruto.delete()
             await obito.edit("Your Video Is Successfully Deleted ✅")
@@ -333,11 +334,11 @@ async def aud(bot, update):
             
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Audio Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Audio To Somewhere Else And Start Downloading There.", quote=True)
             await hinata.delete()
+            await ms.delete()
             
             os.remove(file_path)
             os.remove(ph_path)
             
-            await ms.delete()
             await asyncio.sleep(FILE_AUTO_DELETE)
             await naruto.delete()
             await obito.edit("Your Audio Is Successfully Deleted ✅")
@@ -356,10 +357,10 @@ async def aud(bot, update):
             
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Audio Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This Audio To Somewhere Else And Start Downloading There.", quote=True)
             await hinata.delete()
+            await ms.delete()
             
             os.remove(file_path)
             
-            await ms.delete()
             await asyncio.sleep(FILE_AUTO_DELETE)
             await naruto.delete()
             await obito.edit("Your Audio Is Successfully Deleted ✅")

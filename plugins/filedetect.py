@@ -6,55 +6,32 @@ from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup, ForceRep
 
 @Client.on_message(filters.private & filters.reply)
 async def refunc(client, message):
-    if (message.reply_to_message.reply_markup) and isinstance(message.reply_to_message.reply_markup, ForceReply):
-        new_name = message.text
-        await message.delete()
-        media = await client.get_messages(message.chat.id, message.reply_to_message.id)
-        file = media.reply_to_message.document or media.reply_to_message.video or media.reply_to_message.audio
-        filename = file.file_name
-        types = file.mime_type.split("/")
-        mime = types[0]
-        mg_id = media.reply_to_message.id
-        try:
-            out = new_name.split(".")
-            out[1]
-            out_name = out[-1]
-            out_filename = new_name
-            await message.reply_to_message.delete()
-            if mime == "video":
-                markup = InlineKeyboardMarkup([[
-                    InlineKeyboardButton("📁 Document", callback_data="doc"),
-                    InlineKeyboardButton("🎥 Video", callback_data="vid")]])
-            elif mime == "audio":
-                markup = InlineKeyboardMarkup([[InlineKeyboardButton(
-                    "📁 Document", callback_data="doc"), InlineKeyboardButton("🎵 Audio", callback_data="aud")]])
+    reply_message = message.reply_to_message
+    if (reply_message.reply_markup) and isinstance(reply_message.reply_markup, ForceReply):
+        new_name = message.text 
+        await message.delete() 
+        msg = await client.get_messages(message.chat.id, reply_message.id)
+        file = msg.reply_to_message
+        media = getattr(file, file.media.value)
+        if not "." in new_name:
+            if "." in media.file_name:
+                extn = media.file_name.rsplit('.', 1)[-1]
             else:
-                markup = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("📁 Document", callback_data="doc")]])
-            await message.reply_text(f"**Select The Output File Type**\n\n**Output Filename :** `{out_filename}`", reply_to_message_id=mg_id, reply_markup=markup)
+                extn = "mkv"
+            new_name = new_name + "." + extn
+        await reply_message.delete()
 
-        except:
-            try:
-                out = filename.split(".")
-                out_name = out[-1]
-                out_filename = new_name + "." + out_name
-            except:
-                await message.reply_to_message.delete()
-                await message.reply_text("**Error :** No Extention In File, Not Supporting", reply_to_message_id=mg_id)
-                return
-            await message.reply_to_message.delete()
-            if mime == "video":
-                markup = InlineKeyboardMarkup([[InlineKeyboardButton(
-                    "📁 Document", callback_data="doc"), InlineKeyboardButton("🎥 Video", callback_data="vid")]])
-            elif mime == "audio":
-                markup = InlineKeyboardMarkup([[InlineKeyboardButton(
-                    "📁 Document", callback_data="doc"), InlineKeyboardButton("🎵 Audio", callback_data="aud")]])
-            else:
-                markup = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("📁 Document", callback_data="doc")]])
-            await message.reply_text(f"**Select The Output File Type**\n\n**Output Filename :** `{out_filename}`",
-                                     reply_to_message_id=mg_id, reply_markup=markup)
-            
+        button = [[InlineKeyboardButton("📁 Document",callback_data = "upload_document")]]
+        if file.media in [MessageMediaType.VIDEO, MessageMediaType.DOCUMENT]:
+            button.append([InlineKeyboardButton("🎥 Video", callback_data = "upload_video")])
+        elif file.media == MessageMediaType.AUDIO:
+            button.append([InlineKeyboardButton("🎵 Audio", callback_data = "upload_audio")])
+        await message.reply(
+            text=f"**Select The Output File Type**\n\n**File Name :-** `{new_name}`",
+            reply_to_message_id=file.id,
+            reply_markup=InlineKeyboardMarkup(button)
+        )
+
 
 
 

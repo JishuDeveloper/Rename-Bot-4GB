@@ -9,7 +9,7 @@ from config import *
 
 @Client.on_callback_query(filters.regex('about'))
 async def about(bot,update):
-    text = script.ABOUT_TXT
+    text = script.ABOUT_TXT.format(bot.me.mention)
     keybord = InlineKeyboardMarkup([  
                     [InlineKeyboardButton("🔙 Back",callback_data = "home")]
                   ])

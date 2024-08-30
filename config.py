@@ -21,8 +21,8 @@ LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
 
 
 # Mongo DB Database Config
-DB_URL = os.environ.get("DB_URL", "")
-DB_NAME = os.environ.get("DB_NAME", "madflixbotz")
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "madflixbotz")
 
 
 # Other Variables Config

@@ -31,7 +31,7 @@ async def refunc(client, message):
             else:
                 markup = InlineKeyboardMarkup(
                     [[InlineKeyboardButton("📁 Document", callback_data="doc")]])
-            await message.reply_text(f"<b>Select The Output File Type</b>\n\n<b>Output Filename :</b> <code>{out_filename}</code>", reply_to_message_id=mg_id, reply_markup=markup)
+            await message.reply_text(f"**Select The Output File Type**\n\n**Output Filename :** `{out_filename}`", reply_to_message_id=mg_id, reply_markup=markup)
 
         except:
             try:
@@ -40,7 +40,7 @@ async def refunc(client, message):
                 out_filename = new_name + "." + out_name
             except:
                 await message.reply_to_message.delete()
-                await message.reply_text("<b>Error :</b> No Extention In File, Not Supporting", reply_to_message_id=mg_id)
+                await message.reply_text("**Error :** No Extention In File, Not Supporting", reply_to_message_id=mg_id)
                 return
             await message.reply_to_message.delete()
             if mime == "video":
@@ -52,7 +52,7 @@ async def refunc(client, message):
             else:
                 markup = InlineKeyboardMarkup(
                     [[InlineKeyboardButton("📁 Document", callback_data="doc")]])
-            await message.reply_text(f"<b>Select The Output File Type</b>\n\n<b>Output Filename :</b> <code>{out_filename}</code>",
+            await message.reply_text(f"**Select The Output File Type**\n\n**Output Filename :** `{out_filename}`",
                                      reply_to_message_id=mg_id, reply_markup=markup)
             
 

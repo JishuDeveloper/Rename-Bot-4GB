@@ -3,6 +3,7 @@ import time
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
+
 async def progress_for_pyrogram(current, total, ud_type, message, start):
     now = time.time()
     diff = now - start
@@ -63,3 +64,13 @@ def TimeFormatter(milliseconds: int) -> str:
         ((str(seconds) + "s, ") if seconds else "") + \
         ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
+
+
+
+
+
+# Jishu Developer 
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Back-Up Channel @JishuBotz
+# Developer @JishuDeveloper & @MadflixOfficials

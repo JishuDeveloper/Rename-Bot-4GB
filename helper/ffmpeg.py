@@ -5,6 +5,8 @@ from PIL import Image
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 
+
+
 async def fix_thumb(thumb):
     width = 0
     height = 0
@@ -48,3 +50,13 @@ async def take_screen_shot(video_file, output_directory, ttl):
     if os.path.lexists(out_put_file_name):
         return out_put_file_name
     return None
+
+
+
+
+
+# Jishu Developer 
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Back-Up Channel @JishuBotz
+# Developer @JishuDeveloper & @MadflixOfficials

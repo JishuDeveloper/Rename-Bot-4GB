@@ -1,147 +1,90 @@
-
 {
-
-    "name": "Rename Bot 4GB",
-
-    "description": "4GB Rename Bot",
-
-    "keywords": ["Premium Renamer Bot ", "4GB File", "telegram", "JishuDeveloper" ],
-
+    "name": "Renamer Bot 4GB",
+    "description": "Telegram File Renamer Bot 4GB",
+    "logo": "https://graph.org/file/2c62c5c158d42b0dc8deb.jpg",
+    "keywords": ["Premium Rename Bot", "Renamer Bot 4GB", "Mongo DB"],    
     "repository": "https://github.com/JishuDeveloper/Rename-Bot-4GB",
-
-    "success_url": "https://t.me/Madflix_Bots",
-
+    
     "env": {
-
-        "FORCE_SUBS": {
-
-            "description" : "Channel or Group user Name Without @",
-
-            "value" : "",
-
-            "required" : false
-
-            
-
-         },
-
-        "STRING": {
-
-            "description" : "Pyrogram String Session",
-
-            "value" : "",
-
-            "required" : false
-
-        },
-
         "API_ID": {
-
-            "description" : "Your APP ID From my.telegram.org ",
-
-            "value" : "",
-
-            "required" : true
-
+            "description": "Your APP ID From my.telegram.org ",
+            "value": "",
+            "required": true
         },
-
-        "API_HASH": {
-
-            "description" : "Your API Hash From my.telegram.org ",
-
-            "value" : "",
-
-            "required" : true
-
-        },
-
-        "BOT_TOKEN": {
-
-            "description" : "Your Bot Token From @BotFather",
-
-            "value" : "",
-
-            "required" : true
-
-        },
-
-        "OWNER": {
-
-            "description" : "Add Your User ID",
-
-            "value" : "",
-
-            "required" : true
-
-        },
-
-        "DB_URL":{
-
-             "description" : "Database Url Get It From Mongo DB",
-
-             "value" : "",
-
-             "required" : true
-
-
-        },
-
-        "DB_NAME":{
-
-               "description" : "Database Name ",
-
-               "value" : "madflixbotz",
-
-               "required" : false
-
-        },
-
-        "LOG_CHANNEL":{
-
-             "description" : "Channel Id Nedd Store Files Get Your channel id from Rose @MissRose_bot",
-
-             "value" : "",
-
-             "required" : true
-
-        },
-        "BOT_PIC":{
-
-            "description" : "Start up pic of your bot. Get from telegraph_Bot",
-
-            "value" : "https://graph.org/file/ad48ac09b1e6f30d2dae4.jpg",
-
-            "required" : false
-
-       },
-        "BOT_USERNAME":{
-
-            "description" : "Add bot username without @",
-
-            "value" : "",
-
-            "required" : true
-
-        }
-
         
-
+        "API_HASH": {
+            "description": "Your API Hash From my.telegram.org ",
+            "value": "",
+            "required": true
+        },
+        
+        "BOT_TOKEN": {
+            "description": "Your Bot Token From @BotFather",
+            "value": "",
+            "required": true
+        },
+        
+        "ADMIN": {
+            "description":"Add Your User ID, If Multiple Is Use Space To Split",
+            "value": "",
+            "required": true
+        },
+        
+        "STRING_API_ID": {
+            "description": "Premium 4GB Client API ID From my.telegram.org ",
+            "value": "0",
+            "required": false
+        },
+        
+        "STRING_API_HASH": {
+            "description": "Premium 4GB Client API Hash From my.telegram.org ",
+            "value": "",
+            "required": false
+        },
+        
+        "STRING_SESSION": {
+            "description": "Premium 4GB Client Pyrogram v2 String Session, You Can Get It From @StringGenXRobot",
+            "value": "",
+            "required": false
+        },
+        
+        "FORCE_SUB": {
+            "description": "Your Force Subscribe Channel Username Without @",
+            "value": "",
+            "required": false 
+        },
+        
+        "LOG_CHANNEL": {
+            "description":"Bot Logs Channel To Sending User Data & 4GB Premium Client To Use, Id Must Startswith -100",
+            "value": "",
+            "required": true          
+        },
+        
+        "DATABASE_URL": {
+            "description": "Your Mongo DB URL Obtained From mongodb.com",
+            "value": "",
+            "required": true
+        },
+        
+        "DATABASE_NAME":{ 
+            "description":"Your Mongo DB Database Name",
+            "value": "JishuBotz",
+            "required": false
+        },
+        
+        "START_PIC": {
+            "description": "Your Bot Start Command Pic, You Can Get It From @GenTelegraphBot",
+            "value": "https://graph.org/file/ad48ac09b1e6f30d2dae4.jpg",
+            "required": false
+        }
     },
-
+    
     "buildpacks": [
-
-      {
-
-        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-
-      },
-
-      {
-
-        "url": "heroku/python"
-
-      }
-
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }    
     ]
-
 }

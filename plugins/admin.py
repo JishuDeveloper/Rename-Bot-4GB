@@ -5,7 +5,10 @@ from helper.date import add_date
 from helper.database import uploadlimit, usertype, addpre
 
 
-@Client.on_message(filters.private & filters.user(OWNER) & filters.command(["warn"]))
+
+
+
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["warn"]))
 async def warn(c, m):
         if len(m.command) >= 3:
             try:
@@ -17,37 +20,45 @@ async def warn(c, m):
                  await m.reply_text("User Not Notfied Sucessfully 😔")
 
 
-@Client.on_message(filters.private & filters.user(OWNER) & filters.command(["addpremium"]))
+
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["addpremium"]))
 async def buypremium(bot, message):
-	await message.reply_text("🦋 Select Plan To Upgrade...", quote=True, reply_markup=InlineKeyboardMarkup([
-		           [InlineKeyboardButton("🪙 Basic", callback_data="vip1")],
-				   [InlineKeyboardButton("⚡ Standard", callback_data="vip2")],
-				   [InlineKeyboardButton("💎 Pro", callback_data="vip3")],
-				   [InlineKeyboardButton("✖️ Cancel ✖️",callback_data = "cancel")]
-				   
-				   ]))
+    button = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🪙 Basic", callback_data="vip1"),
+        InlineKeyboardButton("⚡ Standard", callback_data="vip2")],
+        [InlineKeyboardButton("💎 Pro", callback_data="vip3")],
+        [InlineKeyboardButton("✖️ Cancel ✖️",callback_data = "cancel")]
+        ])
+        
+    await message.reply_text("🦋 Select Plan To Upgrade...", quote=True, reply_markup=button)
+    
+    
 
-
-@Client.on_message((filters.channel | filters.private) & filters.user(OWNER) & filters.command(["ceasepower"]))
+@Client.on_message((filters.channel | filters.private) & filters.user(ADMIN) & filters.command(["ceasepower"]))
 async def ceasepremium(bot, message):
-	await message.reply_text("😁 Power Cease Mode...", quote=True, reply_markup=InlineKeyboardMarkup([
-		           [InlineKeyboardButton("Limit 1GB", callback_data="cp1")],
-				   [InlineKeyboardButton("All Power Cease", callback_data="cp2")],
-				   [InlineKeyboardButton("✖️ Cancel ✖️",callback_data = "cancel")]
-				   
-				   ]))
+    button = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Limit 1GB", callback_data="cp1"),
+        InlineKeyboardButton("All Power Cease", callback_data="cp2")],
+        [InlineKeyboardButton("✖️ Cancel ✖️",callback_data = "cancel")]
+        ])
+	
+    await message.reply_text("😁 Power Cease Mode...", quote=True, reply_markup=button)
 
 
-@Client.on_message((filters.channel | filters.private) & filters.user(OWNER) & filters.command(["resetpower"]))
+
+@Client.on_message((filters.channel | filters.private) & filters.user(ADMIN) & filters.command(["resetpower"]))
 async def resetpower(bot, message):
-	    await message.reply_text(text=f"Do You Really Want To Reset Daily Limit To Default Data Limit 2GB ?",quote=True,reply_markup=InlineKeyboardMarkup([
-		           [InlineKeyboardButton("• Yes ! Set As Default •",callback_data = "dft")],
-				   [InlineKeyboardButton("❌ Cancel ❌",callback_data = "cancel")]
-				   ]))
-
+    button = InlineKeyboardMarkup([
+        [InlineKeyboardButton("✅ Yes",callback_data = "dft"),
+        InlineKeyboardButton("❌ No",callback_data = "cancel")]
+        ])
+        
+    await message.reply_text(text=f"Do You Really Want To Reset Daily Limit To Default Data Limit 2GB ?", quote=True, reply_markup=button)
+    
+    
+    
 
 # PREMIUM POWER MODE @JISHUDEVELOPER
-
 @Client.on_callback_query(filters.regex('vip1'))
 async def vip1(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
@@ -59,6 +70,8 @@ async def vip1(bot,update):
 	await update.message.edit("Added Successfully To Premium Upload Limit 20 GB")
 	await bot.send_message(user_id,"Hey You Are Upgraded To Basic. Check Your Plan Here /myplan")
 
+
+
 @Client.on_callback_query(filters.regex('vip2'))
 async def vip2(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
@@ -69,6 +82,8 @@ async def vip2(bot,update):
 	addpre(int(user_id))
 	await update.message.edit("Added Successfully To Premium Upload Limit 50 GB")
 	await bot.send_message(user_id,"Hey You Are Upgraded To Standard. Check Your Plan Here /myplan")
+
+
 
 @Client.on_callback_query(filters.regex('vip3'))
 async def vip3(bot,update):
@@ -82,8 +97,10 @@ async def vip3(bot,update):
 	await bot.send_message(user_id,"Hey You Are Upgraded To Pro. Check Your Plan Here /myplan")
 
 
-# CEASE POWER MODE @JISHUDEVELOPER
 
+
+
+# CEASE POWER MODE @JISHUDEVELOPER
 @Client.on_callback_query(filters.regex('cp1'))
 async def cp1(bot,update):
 	id = update.message.reply_to_message.text.split("/ceasepower")
@@ -94,6 +111,7 @@ async def cp1(bot,update):
 	addpre(int(user_id))
 	await update.message.edit("Added Successfully To Upload Limit 2GB")
 	await bot.send_message(user_id,"Hey You Are Downgraded To Cease Limit 2GB. Check Your Plan Here /myplan \n\n**Contact Admin :** @calladminrobot")
+
 
 
 @Client.on_callback_query(filters.regex('cp2'))
@@ -109,9 +127,8 @@ async def cp2(bot,update):
 
 
 
+
 # RESET POWER MODE @JISHUDEVELOPER
-
-
 @Client.on_callback_query(filters.regex('dft'))
 async def dft(bot,update):
 	id = update.message.reply_to_message.text.split("/resetpower")
@@ -131,4 +148,5 @@ async def dft(bot,update):
 # Jishu Developer 
 # Don't Remove Credit 🥺
 # Telegram Channel @Madflix_Bots
-# Developer @JishuDeveloper
+# Back-Up Channel @JishuBotz
+# Developer @JishuDeveloper & @MadflixOfficials

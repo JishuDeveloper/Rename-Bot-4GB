@@ -40,7 +40,7 @@
 <summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB">
+<a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB/tree/auto-delete">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>

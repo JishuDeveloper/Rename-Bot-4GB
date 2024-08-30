@@ -57,11 +57,6 @@ async def start(client, message):
 async def send_doc(client, message):
     user_id = message.chat.id
     old = insert(int(user_id))
-    
-    try:
-        id = message.text.split(' ')[1]
-    except IndexError:
-        id = None
         
     user_id = message.from_user.id    
     if FORCE_SUBS:

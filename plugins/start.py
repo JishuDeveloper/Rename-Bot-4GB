@@ -12,8 +12,6 @@ from helper.database import daily as daily_
 from helper.date import check_expi
 from config import *
 
-bot_username = BOT_USERNAME
-log_channel = 
 token = BOT_TOKEN
 botid = token.split(':')[0]
 

@@ -27,7 +27,7 @@ async def donatecm(bot,message):
 
 
 
-@Client.on_message(filters.private & filters.user(OWNER) & filters.command(["admin"]))
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["admin"]))
 async def admincm(bot,message):
     text = script.ADMIN_TXT
     keybord = InlineKeyboardMarkup([

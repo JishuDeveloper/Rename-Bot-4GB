@@ -114,17 +114,16 @@ async def doc(bot, update):
             
             obito = await naruto.reply_text(f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis File Will Be Deleted In {delete_time}.(Due To Copyright Issues).\n\n📌 Please Forward This File To Somewhere Else And Start Downloading There.", quote=True)
             await hinata.delete()
+            await ms.delete()
+            await asyncio.sleep(FILE_AUTO_DELETE)
+            await naruto.delete()
+            await obito.edit("Your File Is Successfully Deleted ✅")
             
             os.remove(file_path)
             try:
                 os.remove(ph_path)
             except:
                 pass
-                
-            await ms.delete()
-            await asyncio.sleep(FILE_AUTO_DELETE)
-            await naruto.delete()
-            await obito.edit("Your File Is Successfully Deleted ✅")
             
         except Exception as e:
             neg_used = used - int(file.file_size)

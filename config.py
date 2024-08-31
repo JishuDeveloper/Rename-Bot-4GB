@@ -10,8 +10,6 @@ ADMIN = int(os.environ.get("ADMIN", ""))
 
 
 # Premium 4GB Renaming Client Config
-STRING_API_ID = int(os.environ.get("STRING_API_ID", "0"))
-STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
 STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 

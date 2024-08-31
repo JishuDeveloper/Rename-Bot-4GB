@@ -26,7 +26,7 @@
 * `START_PIC` - Your Bot Start Command Pic (Optional)
 * `STRING_API_ID` - Premium 4GB Client API ID From <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> (Optional)
 * `STRING_API_HASH` - Premium 4GB Client API HASH From <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> (Optional)
-* `STRING_SESSION` - Premium 4GB Client Pyrogram v2 String Session, You Can Get It From <a href="https://t.me/StringGenXRobot" target="/blank">String Gen Bot</a>
+* `STRING_SESSION` - Premium 4GB Client Pyrogram v2 String Session, You Can Get It From <a href="https://t.me/StringGenXRobot" target="/blank">String Gen Bot</a> (Optional)
 </b>
 </details>
 

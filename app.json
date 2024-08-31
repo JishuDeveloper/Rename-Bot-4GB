@@ -30,18 +30,6 @@
             "required": true
         },
         
-        "STRING_API_ID": {
-            "description": "Premium 4GB Client API ID From my.telegram.org ",
-            "value": "0",
-            "required": false
-        },
-        
-        "STRING_API_HASH": {
-            "description": "Premium 4GB Client API Hash From my.telegram.org ",
-            "value": "",
-            "required": false
-        },
-        
         "STRING_SESSION": {
             "description": "Premium 4GB Client Pyrogram v2 String Session, You Can Get It From @StringGenXRobot",
             "value": "",

@@ -9,120 +9,114 @@
 
 
 
+
 ### 🔥 ALL VARIABLES
 
-* `BOT_TOKEN` - Get bot token from <a href="https://t.me/BotFather" target="/blank">Bot Father</a>
-* `API_ID` - Get API ID from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> 
-* `API_HASH` - Get API HASH from <a href="https://my.telegram.org" target="/blank">Telegram Auth</a>
-* `OWNER` - Bot admin/owner user id.
-* `DB_URL` - Mongo Database URL from <a href="https://cloud.mongodb.com" target="/blank">Mongo DB</a>
-* `DB_NAME`  - Your database name from mongoDB.
-* `FORCE_SUBS` - Your force sub channel username `without @` (Optional)
-* `BOT_PIC` - Start message photo. (Optional)
-* `STRING` - If you want to rename 4GB+ files.
-* `BOT_USERNAME` - Add bot username `without @` (Optional)
-* `LOG_CHANNEL` - A channel to log the activities of bot. Make sure bot is an admin in the channel.
+<b><details><summary>Tap On Me For Environment Variable</summary>
+
+* `API_ID` - Get API ID From <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> 
+* `API_HASH` - Get API HASH From <a href="https://my.telegram.org" target="/blank">Telegram Auth</a>
+* `BOT_TOKEN` - Get BOT TOKEN From <a href="https://t.me/BotFather" target="/blank">Bot Father</a>
+* `ADMIN` - Add Your User ID, If Multiple Is Use Space To Split
+* `LOG_CHANNEL` - Bot Logs Channel To Sending User Data & 4GB Premium Client To Use, Id Must Startswith -100 & Make Sure Bot Is Admin In This Channel
+* `DATABASE_URL` - Mongo Database URL From <a href="https://cloud.mongodb.com" target="/blank">Mongo DB</a>
+* `DATABASE_NAME`  - Your Mongo Database Name From Mongo DB (Optional)
+* `FORCE_SUBS` - Your Force Subscribe Channel Username Without @ (Optional)
+* `START_PIC` - Your Bot Start Command Pic (Optional)
+* `STRING_API_ID` - Premium 4GB Client API ID From <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> (Optional)
+* `STRING_API_HASH` - Premium 4GB Client API HASH From <a href="https://my.telegram.org" target="/blank">Telegram Auth</a> (Optional)
+* `STRING_SESSION` - Premium 4GB Client Pyrogram v2 String Session, You Can Get It From <a href="https://t.me/StringGenXRobot" target="/blank">String Gen Bot</a>
+</b>
+</details>
 
 
 
+### 📶 DEPLOYEMENT
 
-### 📶 DEPLOYEMENT SUPPORT
+<b><details><summary>Tap On Me For Deply To Heroku</summary>
 
-<summary>Deploy To Koyeb</summary>
+ - Deploy To Heroku
 <p>
-<br>                 
-<a target="/blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/JishuDeveloper/Rename-Bot-4GB&branch=main&name=rename-botz" >
-  <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy">
-</a>
+<a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"> </a>
 </p>
-
-
-<summary>Deploy To Heroku</summary>
-<p>
-<br>
-<a href="https://heroku.com/deploy?template=https://github.com/JishuDeveloper/Rename-Bot-4GB">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
-</p>
-
-
+</b>
+</details>
 
 
 
 ### 🥰 FEATURES
- - Renames very fast .
- - Support 4Gb Rename With Upgrade Plan .
- - Permanent Thumbnail support.
- - Supports Broadcasts.
- - Set custom caption.
- - Has a custom Start-up pic.
- - Force subscribe available.
- - Supports ulimited renaming at a time.
- - Deploy to Koyeb + Heroku + Railway.
- - Developer Service 24x7. 🔥
 
+<b><details><summary>Tap On Me For Bot Features</summary>
+
+ - Renames Very Fast.
+ - Support 4GB Rename With Upgrade Plan.
+ - Permanent Thumbnail Support.
+ - Supports Broadcasts.
+ - Set Custom Caption.
+ - Has A Custom Start-Up Pic.
+ - Force Subscribe Available.
+ - Supports Unlimited Renaming At A Time.
+ - Deploy To Koyeb + Heroku + Railway.
+ - Developer Service 24x7. 🔥
+</b>
+</details>
 
 
 
 ### 😍 USER COMMANDS
 
-`/start` - Check if the bot is running.
- 
-`/viewthumb` - To view current thumbnail.
- 
-`/delthumb` - To delete current thumbnail.
- 
-`/set_caption` - To set a custom caption.
- 
-`/see_caption` - To see your custom caption.
- 
-`/del_caption` - To delete custom caption.
+<b><details><summary>Tap On Me For User Commands</summary>
 
-`/ping` - To Check Bot ping.
- 
-`/myplan` - To view users current plan.
-
-`/donate` - To support developer.
- 
-`/upgrade` - To view all plans with price list.
+```
+start - Check If The Bot Is Running.
+viewthumb - To View Current Thumbnail.
+delthumb - To Delete Current Thumbnail.
+set_caption - To Set A Custom Caption.
+see_caption - To See Your Custom Caption.
+del_caption - To Delete Custom Caption.
+ping - To Check Bot Ping.
+myplan - To View User Current Plan.
+donate - To Support Developer.
+upgrade - To View All Plans With Price List.
+```
+</b>
+</details>
 
 
 
+### 🔐 ADMIN COMMANDS
 
-### ADMIN COMMAND
+<b><details><summary>Tap On Me For Admin Commands</summary>
 
-`/users` - Use This Command To See Total Users [Admins Only].
-
-`/allids` - Use This Command To See All Users IDs list [Admins Only].
- 
-`/broadcast` - Message Broadcast command [Admins Only].
-
-`/warn` - Use This Command To Send A Message To A User [Admins Only].
- 
-`/ceasepower` - To Cease (downgrade) renaming capacity [Admins Only].
- 
-`/resetpower` - To Reset renaming capacity (to default 2GB)  [Admins Only].
- 
-`/addpremium` - To Upgrade user plan [Admins Only].
-
-`/restart` - Use This Command To Cancel All Process And Restart The Bot [Admins Only].
+```
+users - Use This Command To See Total Users [Admins Only].
+allids - Use This Command To See All Users IDs List [Admins Only].
+broadcast - Message Broadcast Command [Admins Only].
+warn - Use This Command To Send A Message To A User [Admins Only].
+ceasepower - To Cease (Downgrade) Renaming Capacity [Admins Only].
+resetpower - To Reset Renaming Capacity (To Default 2GB) [Admins Only].
+addpremium - To Upgrade User Plan [Admins Only].
+restart - Use This Command To Cancel All Process And Restart The Bot [Admins Only].
+```
+</b>
+</details>
 
 
 
-### ❤️ RESPECTING ❤️
+### ❤️ RESPECTING
 - [JishuDeveloper](https://github.com/JishuDeveloper)
 - [Madflix Official](https://github.com/jishusinha) 
 - [lntechnical](https://github.com/lntechnical2)
 
-### 😍 BOTS CHANNEL 😍
+### 😍 BOTS CHANNEL
 - [Madflix Botz](https://t.me/Madflix_Bots)
 - [Jishu Botz](https://t.me/JishuBotz)
 
-### 💕 CONTACT DEVELOPER 💕
+### 💕 CONTACT DEVELOPER
 - [Jishu Developer](https://t.me/JishuDeveloper)
 - [Madflix Official](https://t.me/MadflixOfficials)
 
-### ☕ BUY ME A COFFEE ☕
+### ☕ BUY ME A COFFEE
 - [PayPal](https://paypal.me/jishudeveloper/2.50USD)
 - [PhonePe](https://graph.org/file/6822df5af3a2e80637172.jpg)
 - [UPI](https://graph.org/file/b831109be4acff5c966d2.jpg)

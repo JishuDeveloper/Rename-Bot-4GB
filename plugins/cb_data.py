@@ -12,7 +12,7 @@ from helper.progress import humanbytes
 from helper.set import escape_invalid_curly_brackets
 from config import *
 
-app = Client("JishuBotz", api_id=STRING_API_ID, api_hash=STRING_API_HASH, session_string=STRING_SESSION)
+app = Client("JishuBotz", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
 
 
 

@@ -16,8 +16,8 @@ OFF = [[InlineKeyboardButton('Metadata Off ❌', callback_data='metadata_0')], [
 async def handle_metadata(bot: Client, message: Message):
 
     ms = await message.reply_text("**Please Wait...**", reply_to_message_id=message.id)
-    bool_metadata = getmeta(message.chat.id)
-    user_metadata = getmetacode(message.chat.id)
+    bool_metadata = getmeta(int(message.chat.id), metadata)
+    user_metadata = getmetacode(int(message.chat.id), metadata_code)
     await ms.delete()
     if bool_metadata:
         return await message.reply_text(f"**Your Current Metadata :-**\n\n➜ `{user_metadata}` ",quote=True, reply_markup=InlineKeyboardMarkup(ON))
@@ -31,14 +31,14 @@ async def query_metadata(bot: Client, query: CallbackQuery):
 
     if data.startswith('metadata_'):
         _bool = data.split('_')[1]
-        user_metadata = getmetacode(query.message.chat.id)
+        user_metadata = getmetacode(int(query.message.chat.id), metadata_code)
 
         if bool(eval(_bool)):
-            setmeta(query.message.chat.id, bool_meta=False)
+            setmeta(int(query.message.chat.id), bool_meta=False)
             await query.message.edit(f"**Your Current Metadata :-**\n\n➜ `{user_metadata}` ", reply_markup=InlineKeyboardMarkup(OFF))
 
         else:
-            setmeta(query.message.chat.id, bool_meta=True)
+            setmeta(int(query.message.chat.id), bool_meta=True)
             await query.message.edit(f"**Your Current Metadata :-**\n\n➜ `{user_metadata}` ", reply_markup=InlineKeyboardMarkup(ON))
 
     elif data == 'cutom_metadata':
@@ -51,7 +51,7 @@ async def query_metadata(bot: Client, query: CallbackQuery):
                 return
             print(metadata.text)
             ms = await query.message.reply_text("**Please Wait...**", reply_to_message_id=metadata.id)
-            setmetacode(query.message.chat.id, metadata_code=metadata.text)
+            setmetacode(int(query.message.chat.id), metadata_code=metadata.text)
             await ms.edit("**Your Metadata Code Set Successfully ✅**")
         except Exception as e:
             print(e)

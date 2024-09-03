@@ -121,8 +121,18 @@ def find(chat_id):
             caption = i["caption"]
         except:
             caption = None
+        try:
+            metadata = i["bool_meta"]
+        except:
+            metadata = False
+        try:
+            metadata_code = ["metadata_code"]
+        except:
+            metadata_code = None
+            
 
-        return [file, caption]
+
+        return [file, caption, metadata, metadata_code]
 
 def getid():
     values = []

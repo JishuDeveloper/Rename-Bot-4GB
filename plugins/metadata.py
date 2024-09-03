@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
-from helper.database import setmeta, getmeta, setmetacode, getmetacode
+from helper.database import *
 from pyromod.exceptions import ListenerTimeout
 from script import *
 

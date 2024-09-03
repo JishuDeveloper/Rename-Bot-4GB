@@ -77,11 +77,11 @@ async def doc(bot, update):
         return
     
     # Metadata Adding Code
-    _bool_metadata = getmeta(int(update.message.chat.id), metadata)
+    _bool_metadata = find(int(message.chat.id))[2]
     
     if (_bool_metadata):
         metadata_path = f"Metadata/{new_filename}"
-        metadata = getmetacode(int(update.message.chat.id), metadata_code)
+        metadata = find(int(message.chat.id))[3]
         if metadata:
 
             await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
@@ -207,11 +207,11 @@ async def vid(bot, update):
         return
     
     # Metadata Adding Code
-    _bool_metadata = getmeta(int(update.message.chat.id), metadata)
+    _bool_metadata = find(int(message.chat.id))[2]
     
     if (_bool_metadata):
         metadata_path = f"Metadata/{new_filename}"
-        metadata = getmetacode(int(update.message.chat.id), metadata_code)
+        metadata = find(int(message.chat.id))[3]
         if metadata:
 
             await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
@@ -231,7 +231,7 @@ async def vid(bot, update):
                 pass
         await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
     else:
-        await ms.edit("🚀 Mode Changing...  ⚡") 
+        await ms.edit("🚀 Mode Changing...  ⚡")  
 
 
     splitpath = path.split("/downloads/")
@@ -345,11 +345,11 @@ async def aud(bot, update):
         return
     
     # Metadata Adding Code
-    _bool_metadata = getmeta(int(update.message.chat.id), metadata)
+    _bool_metadata = find(int(message.chat.id))[2]
     
     if (_bool_metadata):
         metadata_path = f"Metadata/{new_filename}"
-        metadata = getmetacode(int(update.message.chat.id), metadata_code)
+        metadata = find(int(message.chat.id))[3]
         if metadata:
 
             await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")

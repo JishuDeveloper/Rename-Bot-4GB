@@ -126,7 +126,7 @@ def find(chat_id):
         except:
             metadata = False
         try:
-            metadata_code = ["metadata_code"]
+            metadata_code = i["metadata_code"]
         except:
             metadata_code = None
             

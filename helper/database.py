@@ -64,16 +64,8 @@ def delthumb(chat_id):
 def setmeta(chat_id, bool_meta):
     dbcol.update_one({"_id": chat_id}, {"$set": {"metadata": bool_meta}})
 
-def getmeta(chat_id):
-    dbcol.update_one({"_id": chat_id}, {"$set": {"metadata": None}})
-
-
-
 def setmetacode(chat_id, metadata_code):
     dbcol.update_one({"_id": chat_id}, {"$set": {"metadata_code": metadata_code}})
-
-def getmetacode(chat_id):
-    dbcol.update_one({"_id": chat_id}, {"$set": {"metadata_code": None}})
 
 # ============= Metadata Function Code =============== #
 

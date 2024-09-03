@@ -1,4 +1,3 @@
-
 from helper.progress import progress_for_pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup, ForceReply)
@@ -8,7 +7,7 @@ from helper.database import *
 import os, random, time, asyncio, humanize
 from PIL import Image
 from datetime import timedelta
-from helper.ffmpeg import take_screen_shot, fix_thumb
+from helper.ffmpeg import take_screen_shot, fix_thumb, add_metadata
 from helper.progress import humanbytes
 from helper.set import escape_invalid_curly_brackets
 from config import *
@@ -77,31 +76,14 @@ async def doc(bot, update):
         return
     
     # Metadata Adding Code
-    _bool_metadata = find(int(message.chat.id))[2]
+    _bool_metadata = find(int(message.chat.id))[2] 
     
-    if (_bool_metadata):
-        metadata_path = f"Metadata/{new_filename}"
+    if _bool_metadata:
         metadata = find(int(message.chat.id))[3]
-        if metadata:
-
-            await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
-            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
-
-            process = await asyncio.create_subprocess_shell(
-                cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-            )
-
-            stdout, stderr = await process.communicate()
-            er = stderr.decode()
-
-            try:
-                if er:
-                    return await ms.edit(str(er) + "\n\n**Error**")
-            except BaseException:
-                pass
-        await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
+        metadata_path = f"Metadata/{new_filename}"
+        await add_metadata(path, metadata_path, metadata, ms)
     else:
-        await ms.edit("🚀 Mode Changing...  ⚡") 
+        await ms.edit("🚀 Mode Changing...  ⚡")
 
     splitpath = path.split("/downloads/")
     dow_file_name = splitpath[1]
@@ -207,32 +189,14 @@ async def vid(bot, update):
         return
     
     # Metadata Adding Code
-    _bool_metadata = find(int(message.chat.id))[2]
+    _bool_metadata = find(int(message.chat.id))[2] 
     
-    if (_bool_metadata):
-        metadata_path = f"Metadata/{new_filename}"
+    if _bool_metadata:
         metadata = find(int(message.chat.id))[3]
-        if metadata:
-
-            await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
-            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
-
-            process = await asyncio.create_subprocess_shell(
-                cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-            )
-
-            stdout, stderr = await process.communicate()
-            er = stderr.decode()
-
-            try:
-                if er:
-                    return await ms.edit(str(er) + "\n\n**Error**")
-            except BaseException:
-                pass
-        await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
+        metadata_path = f"Metadata/{new_filename}"
+        await add_metadata(path, metadata_path, metadata, ms)
     else:
-        await ms.edit("🚀 Mode Changing...  ⚡")  
-
+        await ms.edit("🚀 Mode Changing...  ⚡") 
 
     splitpath = path.split("/downloads/")
     dow_file_name = splitpath[1]
@@ -345,32 +309,14 @@ async def aud(bot, update):
         return
     
     # Metadata Adding Code
-    _bool_metadata = find(int(message.chat.id))[2]
+    _bool_metadata = find(int(message.chat.id))[2] 
     
-    if (_bool_metadata):
-        metadata_path = f"Metadata/{new_filename}"
+    if _bool_metadata:
         metadata = find(int(message.chat.id))[3]
-        if metadata:
-
-            await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
-            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
-
-            process = await asyncio.create_subprocess_shell(
-                cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-            )
-
-            stdout, stderr = await process.communicate()
-            er = stderr.decode()
-
-            try:
-                if er:
-                    return await ms.edit(str(er) + "\n\n**Error**")
-            except BaseException:
-                pass
-        await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
+        metadata_path = f"Metadata/{new_filename}"
+        await add_metadata(path, metadata_path, metadata, ms)
     else:
-        await ms.edit("🚀 Mode Changing...  ⚡") 
-
+        await ms.edit("🚀 Mode Changing...  ⚡")
         
     splitpath = path.split("/downloads/")
     dow_file_name = splitpath[1]

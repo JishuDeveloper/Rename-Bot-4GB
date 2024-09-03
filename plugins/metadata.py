@@ -51,9 +51,8 @@ async def query_metadata(bot: Client, query: CallbackQuery):
                 return
             print(metadata.text)
             ms = await query.message.reply_text("**Please Wait...**", reply_to_message_id=metadata.id)
-            reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('✖️ Close ✖️', callback_data='close')]])
             setmetacode(query.message.chat.id, metadata_code=metadata.text)
-            await ms.edit("**Your Metadata Code Set Successfully ✅**", reply_markup=reply_markup)
+            await ms.edit("**Your Metadata Code Set Successfully ✅**")
         except Exception as e:
             print(e)
 

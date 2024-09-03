@@ -1,3 +1,4 @@
+
 from helper.progress import progress_for_pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup, ForceReply)
@@ -47,6 +48,11 @@ async def rename(bot, update):
 
 @Client.on_callback_query(filters.regex("doc"))
 async def doc(bot, update):
+
+    # Creating Directory for Metadata
+    if not os.path.isdir("Metadata"):
+        os.mkdir("Metadata")
+
     new_name = update.message.text
     used_ = find_one(update.from_user.id)
     used = used_["used_limit"]
@@ -69,6 +75,34 @@ async def doc(bot, update):
         used_limit(update.from_user.id, neg_used)
         await ms.edit(e)
         return
+    
+    # Metadata Adding Code
+    _bool_metadata = getmeta(update.message.chat.id)  
+    
+    if (_bool_metadata):
+        metadata_path = f"Metadata/{new_filename}"
+        metadata = getmetacode(update.message.chat.id)
+        if metadata:
+
+            await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
+            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
+
+            process = await asyncio.create_subprocess_shell(
+                cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+            )
+
+            stdout, stderr = await process.communicate()
+            er = stderr.decode()
+
+            try:
+                if er:
+                    return await ms.edit(str(er) + "\n\n**Error**")
+            except BaseException:
+                pass
+        await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
+    else:
+        await ms.edit("🚀 Mode Changing...  ⚡") 
+
     splitpath = path.split("/downloads/")
     dow_file_name = splitpath[1]
     old_file_name = f"downloads/{dow_file_name}"
@@ -102,7 +136,7 @@ async def doc(bot, update):
     if value < file.file_size:
         await ms.edit("🚀 Try To Upload...  ⚡")
         try:
-            filw = await app.send_document(LOG_CHANNEL, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
+            filw = await app.send_document(LOG_CHANNEL, document=metadata_path if _bool_metadata else file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             from_chat = filw.chat.id
             mg_id = filw.id
             time.sleep(2)
@@ -128,7 +162,7 @@ async def doc(bot, update):
         await ms.edit("🚀 Try To Upload...  ⚡")
         c_time = time.time()
         try:
-            await bot.send_document(update.from_user.id, document=file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
+            await bot.send_document(update.from_user.id, document=metadata_path if _bool_metadata else file_path, thumb=ph_path, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             await ms.delete()
             
             os.remove(file_path)
@@ -143,6 +177,11 @@ async def doc(bot, update):
 
 @Client.on_callback_query(filters.regex("vid"))
 async def vid(bot, update):
+
+    # Creating Directory for Metadata
+    if not os.path.isdir("Metadata"):
+        os.mkdir("Metadata")
+
     new_name = update.message.text
     used_ = find_one(update.from_user.id)
     used = used_["used_limit"]
@@ -166,6 +205,35 @@ async def vid(bot, update):
         used_limit(update.from_user.id, neg_used)
         await ms.edit(e)
         return
+    
+    # Metadata Adding Code
+    _bool_metadata = getmeta(update.message.chat.id)  
+    
+    if (_bool_metadata):
+        metadata_path = f"Metadata/{new_filename}"
+        metadata = getmetacode(update.message.chat.id)
+        if metadata:
+
+            await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
+            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
+
+            process = await asyncio.create_subprocess_shell(
+                cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+            )
+
+            stdout, stderr = await process.communicate()
+            er = stderr.decode()
+
+            try:
+                if er:
+                    return await ms.edit(str(er) + "\n\n**Error**")
+            except BaseException:
+                pass
+        await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
+    else:
+        await ms.edit("🚀 Mode Changing...  ⚡") 
+
+
     splitpath = path.split("/downloads/")
     dow_file_name = splitpath[1]
     old_file_name = f"downloads/{dow_file_name}"
@@ -209,7 +277,7 @@ async def vid(bot, update):
     if value < file.file_size:
         await ms.edit("🚀 Try To Upload...  ⚡")
         try:
-            filw = await app.send_video(LOG_CHANNEL, video=file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
+            filw = await app.send_video(LOG_CHANNEL, video=metadata_path if _bool_metadata else file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             from_chat = filw.chat.id
             mg_id = filw.id
             time.sleep(2)
@@ -235,7 +303,7 @@ async def vid(bot, update):
         await ms.edit("🚀 Try To Upload...  ⚡")
         c_time = time.time()
         try:
-            await bot.send_video(update.from_user.id, video=file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
+            await bot.send_video(update.from_user.id, video=metadata_path if _bool_metadata else file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             await ms.delete()
             
             os.remove(file_path)
@@ -250,6 +318,11 @@ async def vid(bot, update):
 
 @Client.on_callback_query(filters.regex("aud"))
 async def aud(bot, update):
+
+    # Creating Directory for Metadata
+    if not os.path.isdir("Metadata"):
+        os.mkdir("Metadata")
+
     new_name = update.message.text
     used_ = find_one(update.from_user.id)
     used = used_["used_limit"]
@@ -270,6 +343,35 @@ async def aud(bot, update):
         used_limit(update.from_user.id, neg_used)
         await ms.edit(e)
         return
+    
+    # Metadata Adding Code
+    _bool_metadata = getmeta(update.message.chat.id)  
+    
+    if (_bool_metadata):
+        metadata_path = f"Metadata/{new_filename}"
+        metadata = getmetacode(update.message.chat.id)
+        if metadata:
+
+            await ms.edit("__I Found Metadata, Adding Into Your File ⚡__")
+            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
+
+            process = await asyncio.create_subprocess_shell(
+                cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+            )
+
+            stdout, stderr = await process.communicate()
+            er = stderr.decode()
+
+            try:
+                if er:
+                    return await ms.edit(str(er) + "\n\n**Error**")
+            except BaseException:
+                pass
+        await ms.edit("__Metadata Has Been Successfully Added To Your File ✅__")
+    else:
+        await ms.edit("🚀 Mode Changing...  ⚡") 
+
+        
     splitpath = path.split("/downloads/")
     dow_file_name = splitpath[1]
     old_file_name = f"downloads/{dow_file_name}"
@@ -299,7 +401,7 @@ async def aud(bot, update):
         await ms.edit("🚀 Try To Upload...  ⚡")
         c_time = time.time()
         try:
-            await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, thumb=ph_path, duration=duration, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
+            await bot.send_audio(update.message.chat.id, audio=metadata_path if _bool_metadata else file_path, caption=caption, thumb=ph_path, duration=duration, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             await ms.delete()
             
             os.remove(file_path)
@@ -315,7 +417,7 @@ async def aud(bot, update):
         await ms.edit("🚀 Try To Upload...  ⚡")
         c_time = time.time()
         try:
-            await bot.send_audio(update.message.chat.id, audio=file_path, caption=caption, duration=duration, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
+            await bot.send_audio(update.message.chat.id, audio=metadata_path if _bool_metadata else file_path, caption=caption, duration=duration, progress=progress_for_pyrogram, progress_args=("🚀 Try To Uploading...  ⚡",  ms, c_time))
             await ms.delete()
             
             os.remove(file_path)

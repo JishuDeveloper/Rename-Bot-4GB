@@ -31,7 +31,7 @@ async def query_metadata(bot: Client, query: CallbackQuery):
 
     if data.startswith('metadata_'):
         _bool = data.split('_')[1]
-        user_metadata = find(int(message.chat.id))[3] # getmetacode(int(query.message.chat.id), metadata_code)
+        user_metadata = find(int(query.message.chat.id))[3] # getmetacode(int(query.message.chat.id), metadata_code)
 
         if bool(eval(_bool)):
             setmeta(int(query.message.chat.id), bool_meta=False)

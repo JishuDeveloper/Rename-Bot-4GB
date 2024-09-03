@@ -46,6 +46,16 @@ If You Like My Bots & Projects, You Can 🎁 Donate Me Any Amount From 10 Rs Upt
 <b>⦿ /restart - Use This Command To Cancel All Process And Restart The Bot</b>"""
 
 
+    METADATA_TXT = """<b><u>🖼️  HOW TO SET CUSTOM METADATA</u></b>
+
+For Example :-
+
+<code>-map 0 -c:s copy -c:a copy -c:v copy -metadata title="Encoded By :- @Madflix_Bots" -metadata author="@JishuDeveloper" -metadata:s:s title="Subtitled By :- @Madflix_Bots" -metadata:s:a title="By :- @Madflix_Bots" -metadata:s:v title="Encoded By :- @Madflix_Bots"</code>
+
+💬 For Any Help Contact @MadflixOfficials
+"""
+
+
 
 
 

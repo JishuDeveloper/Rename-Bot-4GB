@@ -40,8 +40,8 @@ def total_size(chat_id, total_size, now_file_size):
 def insert(chat_id):
     user_id = int(chat_id)
     user_det = {"_id": user_id, "file_id": None, "caption": None, "daily": 0, "date": 0,
-                "uploadlimit": 5368709120, "used_limit": 0, "usertype": "Free", "prexdate": None, "metadata": False,
-                "metadata_code": """ -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Encoded By :- @Madflix_Bots" -metadata author="@JishuDeveloper" -metadata:s:s title="Subtitled By :- @Madflix_Bots" -metadata:s:a title="By :- @Madflix_Bots" -metadata:s:v title="Encoded By :- @Madflix_Bots" """}
+                "uploadlimit": 5368709120, "used_limit": 0, "usertype": "Free", "prexdate": None,
+                "metadata": False, "metadata_code": "By @Madflix_Bots"}
     try:
         dbcol.insert_one(user_det)
     except:

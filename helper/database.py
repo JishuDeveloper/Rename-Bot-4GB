@@ -122,7 +122,7 @@ def find(chat_id):
         except:
             caption = None
         try:
-            metadata = i["bool_meta"]
+            metadata = i["metadata"]
         except:
             metadata = False
         try:

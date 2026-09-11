@@ -18,7 +18,7 @@ if STRING_SESSION:
     apps = [Client2,bot]
     for app in apps:
         app.start()
-    idle()
+'idle()'
     for app in apps:
         app.stop()
     
